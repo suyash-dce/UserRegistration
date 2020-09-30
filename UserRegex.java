@@ -12,11 +12,13 @@ public class UserRegex {
 		String lname_match = fname_match;
 		String email_match = "^(abc)+[0-9a-z_+-.]*@bl\\.co\\.[a-z]{2}$";
 		String phone_match = "[0-9]{1,}\\s[1-9]{1}[0-9]{9}";
+		String pass_match = ".{8,}";
 		
 		String firstname;
 		String lastname;
 		String email;
 		String phone;
+		String pass;
 		
 		//Checking for matches
 		
@@ -75,9 +77,24 @@ public class UserRegex {
 				System.out.println();
 			}
 		}
+		
+		while(true) {
+			//Entering password
+			System.out.print("Please enter your password: ");
+			pass = sc.nextLine();
+			
+			boolean check=pass.matches(pass_match);							//Condition check
+			if(check) {
+				break;
+			}else{
+				System.out.println("Incorrect format. Please try again.");
+				System.out.println();
+			}
+		}
 		System.out.println("Welcome "+firstname+" "+lastname);
 		System.out.println("You Email ID is "+email);
 		System.out.println("You Mobile Phone No. is +"+phone);
+		System.out.println("You Password is [Redacted]");
 		System.out.println("Program End.");
 	}
 }
