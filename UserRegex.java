@@ -1,5 +1,3 @@
-
-
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,18 +8,20 @@ public class UserRegex {
 		
 		Scanner sc=new Scanner(System.in);
 		
-		String name_match = "[A-Z]{1}[a-zA-Z]{2,}";			//String pattern to be detected
-
-		String name;
+		String fname_match = "[A-Z]{1}[a-zA-Z]{2,}";			//String pattern to be detected
+		String lname_match = fname_match;
+		
+		String firstname;
+		String lastname;
 		
 		//Checking for matches
+		
 		while(true) {
+			//Entering firstname
+			System.out.print("Please enter your First Name: ");
+			firstname = sc.nextLine();
 			
-			//Entering Username
-			System.out.print("Please enter your User Name: ");
-			name = sc.nextLine();
-			
-			boolean check=name.matches(name_match);							//Condition check
+			boolean check=firstname.matches(fname_match);							//Condition check
 			if(check) {
 				break;
 			}else{
@@ -29,7 +29,21 @@ public class UserRegex {
 				System.out.println();
 			}
 		}
-		System.out.println("Welcome "+name);
+		
+		while(true) {
+			//Entering lastname
+			System.out.print("Please enter your Last Name: ");
+			lastname = sc.nextLine();
+			
+			boolean check=lastname.matches(lname_match);							//Condition check
+			if(check) {
+				break;
+			}else{
+				System.out.println("Incorrect format. Please try again.");
+				System.out.println();
+			}
+		}
+		System.out.println("Welcome "+firstname+" "+lastname);
 		System.out.println("Program End.");
 	}
 }
