@@ -10,7 +10,7 @@ public class UserRegex {
 		
 		String fname_match = "[A-Z]{1}[a-zA-Z]{2,}";			//String pattern to be detected
 		String lname_match = fname_match;
-		String email_match = "^(abc)+[0-9a-z_+-.]*@bl\\.co\\.[a-z]{2}$";
+		String email_match = "^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@([0-9a-zA-Z][-]?)+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$";
 		String phone_match = "[0-9]{1,}\\s[1-9]{1}[0-9]{9}";
 		String pass_match = "((?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])).{8,}";
 		
