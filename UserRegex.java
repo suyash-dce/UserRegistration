@@ -12,7 +12,7 @@ public class UserRegex {
 		String lname_match = fname_match;
 		String email_match = "^(abc)+[0-9a-z_+-.]*@bl\\.co\\.[a-z]{2}$";
 		String phone_match = "[0-9]{1,}\\s[1-9]{1}[0-9]{9}";
-		String pass_match = "(?=.*[A-Z])(?=.*[0-9]).{8,}";
+		String pass_match = "((?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])).{8,}";
 		
 		String firstname;
 		String lastname;
