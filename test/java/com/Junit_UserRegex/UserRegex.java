@@ -7,7 +7,7 @@ public class UserRegistrationUC10 {
 	@Test
 	public void FirstNameCorrect() {
 		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validateFName("Tanmay");
+		boolean result=checker.validateFName("Suyash");
 		Assert.assertTrue(result);
 	}
 
@@ -37,7 +37,7 @@ public class UserRegistrationUC10 {
 	@Test
 	public void EmailCorrect() {
 		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validateEmail("mail.tanmay@gmai.com");
+		boolean result=checker.validateEmail("suyash.jain@gmai.com");
 		Assert.assertTrue(result);
 	}
 
@@ -52,7 +52,7 @@ public class UserRegistrationUC10 {
 	@Test
 	public void PhoneCorrect() {
 		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validatePhone("874 9855201458");
+		boolean result=checker.validatePhone("91 9810224035");
 		Assert.assertTrue(result);
 	}
 
@@ -67,14 +67,14 @@ public class UserRegistrationUC10 {
 	@Test
 	public void PasswordCorrect() {
 		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validatePassword("loPs1&jdlsaf");
+		boolean result=checker.validatePassword("asdfghjkl");
 		Assert.assertTrue(result);
 	}
 
 	@Test
 	public void PasswordIncorrect() {
 		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validatePassword("Tanmay0101");
+		boolean result=checker.validatePassword("Suyash1234");
 		Assert.assertFalse(result);
 	}
 }
