@@ -1,80 +1,108 @@
-import org.junit.Assert;
+import static org.junit.Assert.*;
+import org.junit.Before;
 import org.junit.Test;
 
-public class UserRegistrationUC10 {
+public class UserRegex {
+
+	private UserRegValidation validator;
+
+	@Before
+	public void init() {
+		validator = new UserRegValidation();
+	}
 
 	//Run Test for FirstName - 1 Happy and 1 Sad
 	@Test
-	public void FirstNameCorrect() {
-		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validateFName("Suyash");
-		Assert.assertTrue(result);
+	public void givenFirstName_WhenValid_ShouldReturnTrue() {
+		try {
+			assertTrue(validator.validateFName.compare("Suyash"));
+		} catch (UserDetailInvalid exception) {
+			exception.printStackTrace();
+		}
 	}
 
 	@Test
-	public void FirstNameIncorrect() {
-		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validateFName("Ch");
-		Assert.assertFalse(result);
+	public void givenFirstName_WhenInValid_ShouldThrowException() {
+		try {
+			assertFalse(validator.validateFName.compare("Bh"));
+		} catch (UserDetailInvalid exception) {
+			exception.printStackTrace();
+		}
 	}
 
 	//Run Test for LastName - 1 Happy and 1 Sad
 	@Test
-	public void LastNameCorrect() {
-		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validateLName("Jain");
-		Assert.assertTrue(result);
+	public void givenLastName_WhenValid_ShouldReturnTrue() {
+		try {
+			assertTrue(validator.validateLName.compare("Jain"));
+		} catch (UserDetailInvalid exception) {
+			exception.printStackTrace();
+		}
 	}
 
 	@Test
-	public void LastNameIncorrect() {
-		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validateLName("Jn");
-		Assert.assertFalse(result);
+	public void givenLastName_WhenInValid_ShouldThrowException() {
+		try {
+			assertFalse(validator.validateLName.compare("Jayuf"));
+		} catch (UserDetailInvalid exception) {
+			exception.printStackTrace();
+		}
 	}
 
 	//Run Test for Email - 1 Happy and 1 Sad
 	@Test
-	public void EmailCorrect() {
-		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validateEmail("suyash.jain@gmai.com");
-		Assert.assertTrue(result);
+	public void givenEmail_WhenValid_ShouldReturnTrue() {
+		try {
+			assertTrue(validator.validateEmail.compare("suyash.jain@gmail.com"));
+		} catch (UserDetailInvalid exception) {
+			exception.printStackTrace();
+		}
 	}
 
 	@Test
-	public void EmailIncorrect() {
-		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validateEmail("mail@.com");
-		Assert.assertFalse(result);
+	public void givenEmail_WhenInValid_ShouldThrowException() {
+		try {
+			assertFalse(validator.validateEmail.compare("mail@.com"));
+		} catch (UserDetailInvalid exception) {
+			exception.printStackTrace();
+		}
 	}
 
-	//Run Test for Phone - 1 Happy and 1 Sad
+	//Run Test for Mobile Phone Number - 1 Happy and 1 Sad
 	@Test
-	public void PhoneCorrect() {
-		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validatePhone("91 9810224035");
-		Assert.assertTrue(result);
+	public void givenPhoneNum_WhenValid_ShouldReturnTrue() {
+		try {
+			assertTrue(validator.validatePhone.compare("91 9810224035"));
+		} catch (UserDetailInvalid exception) {
+			exception.printStackTrace();
+		}
 	}
 
 	@Test
-	public void PhoneIncorrect() {
-		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validatePhone("54681");
-		Assert.assertFalse(result);
+	public void givenPhoneNum_WhenInValid_ShouldThrowException() {
+		try {
+			assertFalse(validator.validatePhone.compare("6081"));
+		} catch (UserDetailInvalid exception) {
+			exception.printStackTrace();
+		}
 	}
-	
+
 	//Run Test for Password - 1 Happy and 1 Sad
 	@Test
-	public void PasswordCorrect() {
-		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validatePassword("asdfghjkl");
-		Assert.assertTrue(result);
+	public void givenPassword_WhenValid_ShouldReturnTrue() {
+		try {
+			assertTrue(validator.validatePassword.compare("loPs1&jdlsaf"));
+		} catch (UserDetailInvalid exception) {
+			exception.printStackTrace();
+		}
 	}
 
 	@Test
-	public void PasswordIncorrect() {
-		UserRegValidate checker=new UserRegValidate();
-		boolean result=checker.validatePassword("Suyash1234");
-		Assert.assertFalse(result);
+	public void givenPassword_WhenInValid_ShouldThrowException() {
+		try {
+			assertFalse(validator.validatePassword.compare("SJ6843"));
+		} catch (UserDetailInvalid exception) {
+			exception.printStackTrace();
+		}
 	}
 }
